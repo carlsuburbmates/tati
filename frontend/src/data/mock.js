@@ -1,4 +1,4 @@
-// TonedwithTati Mock Data
+// TonedwithTati Mock Data - Updated Copy
 
 export const SITE_CONFIG = {
   name: 'TonedwithTati',
@@ -38,67 +38,67 @@ export const FOOTER_LINKS = {
 };
 
 export const HOME_HERO = {
-  headline: 'Transform Your Body, Transform Your Life',
-  subheadline: 'Evidence-based fitness & nutrition coaching from Tati, RN — helping you build sustainable habits that last.',
-  cta: 'Start Your Transformation',
+  headline: 'Sustainable Results. Structured Coaching.',
+  subheadline: 'Online 1:1 Nutrition + Training Coaching • RN',
+  cta: 'Book a Consultation',
 };
 
 export const HOME_INTRO = {
-  marker: '01/04',
-  title: 'Why Work With Me?',
-  description: "As a Registered Nurse with years of experience in health and wellness, I combine clinical knowledge with practical coaching. My approach isn't about quick fixes—it's about building a foundation for lifelong health.",
+  marker: '01',
+  title: 'A Different Approach',
+  description: "As a Registered Nurse with years of experience in health and wellness, I bring clinical knowledge to practical coaching. This isn't about quick fixes or extreme protocols—it's about building a foundation for lifelong health through structured, sustainable methods.",
   points: [
-    'Personalized nutrition plans based on your lifestyle',
-    'Sustainable workout programs that fit your schedule',
-    'Weekly check-ins and accountability support',
-    'Science-backed strategies that actually work',
+    'Personalized nutrition guidance based on your lifestyle',
+    'Training programs designed around your schedule',
+    'Regular check-ins and ongoing accountability',
+    'Evidence-based strategies that fit real life',
   ],
 };
 
 export const HOME_STATS = [
-  { number: '500+', label: 'Clients Transformed' },
+  { number: '500+', label: 'Clients Coached' },
   { number: '98%', label: 'Client Satisfaction' },
   { number: '5+', label: 'Years Experience' },
 ];
 
 export const HOME_SERVICES = {
-  marker: '02/04',
-  title: 'Coaching Programs',
+  marker: '02',
+  title: 'How We Can Work Together',
   items: [
     {
       id: 1,
       title: '1:1 Coaching',
-      description: 'Fully personalized programming with direct access to me for questions, form checks, and adjustments.',
-      features: ['Custom meal plans', 'Tailored workouts', 'Weekly check-ins', 'Unlimited messaging'],
+      description: 'Fully personalized programming with direct access for questions, form checks, and adjustments.',
+      features: ['Custom meal guidance', 'Tailored training', 'Weekly check-ins', 'Direct messaging'],
     },
     {
       id: 2,
-      title: 'Group Coaching',
+      title: 'Group Programs',
       description: 'Join a supportive community of like-minded individuals working towards similar goals.',
-      features: ['Structured programs', 'Community support', 'Live Q&A sessions', 'Monthly challenges'],
+      features: ['Structured curriculum', 'Community access', 'Live sessions', 'Monthly focus areas'],
     },
     {
       id: 3,
-      title: 'Self-Guided Plans',
-      description: 'Ready-made programs for those who prefer to work independently at their own pace.',
-      features: ['Digital guides', 'Video tutorials', 'Recipe collections', 'Progress trackers'],
+      title: 'Self-Guided Resources',
+      description: 'Ready-made programs and guides for those who prefer to work independently.',
+      features: ['Digital guides', 'Video tutorials', 'Recipe collections', 'Progress templates'],
     },
   ],
 };
 
 export const HOME_TESTIMONIALS = {
-  marker: '03/04',
-  title: 'What Clients Say',
+  marker: '03',
+  title: 'Client Experiences',
   items: [
     {
       id: 1,
-      quote: "Tati's approach is so different from anything I've tried before. She actually listens and adjusts the plan to fit MY life, not the other way around.",
+      quote: "Tati's approach is refreshingly different. She actually listens and adjusts the plan to fit my life, not the other way around.",
       name: 'Sarah M.',
       result: 'Lost 25 lbs in 4 months',
     },
     {
       id: 2,
-      quote: "For the first time, I actually understand nutrition. The education piece is huge—I feel empowered to make good choices on my own now.",
+      quote: "For the first time, I actually understand nutrition. The education piece is invaluable—I feel empowered to make good choices.",
       name: 'Jessica R.',
       result: 'Maintained results for 2+ years',
     },
@@ -106,46 +106,46 @@ export const HOME_TESTIMONIALS = {
       id: 3,
       quote: "The accountability and support are unmatched. Having someone who genuinely cares about my progress made all the difference.",
       name: 'Amanda K.',
-      result: 'Gained strength & confidence',
+      result: 'Built sustainable habits',
     },
   ],
 };
 
 export const HOME_CTA = {
-  marker: '04/04',
+  marker: '04',
   title: 'Ready to Start?',
-  description: "Book a free consultation to discuss your goals and see if we're a good fit. No pressure, no commitment—just a conversation.",
-  cta: 'Book Free Consultation',
+  description: "Book a consultation to discuss your goals and see if we're the right fit. No pressure, no commitment—just a conversation about where you want to go.",
+  cta: 'Book Your Consultation',
 };
 
 export const RESULTS_HERO = {
-  headline: 'Real People, Real Results',
-  subheadline: "These transformations represent months of dedication, consistency, and hard work. Every journey is unique.",
+  headline: 'Real Progress, Real People',
+  subheadline: "These outcomes represent months of dedication, consistency, and structured work. Every journey looks different.",
 };
 
 export const RESULTS_PROOF_GRID = [
-  { id: 1, placeholder: 'Before/After 1' },
-  { id: 2, placeholder: 'Before/After 2' },
-  { id: 3, placeholder: 'Before/After 3' },
-  { id: 4, placeholder: 'Before/After 4' },
-  { id: 5, placeholder: 'Before/After 5' },
-  { id: 6, placeholder: 'Before/After 6' },
+  { id: 1, placeholder: 'Progress 1' },
+  { id: 2, placeholder: 'Progress 2' },
+  { id: 3, placeholder: 'Progress 3' },
+  { id: 4, placeholder: 'Progress 4' },
+  { id: 5, placeholder: 'Progress 5' },
+  { id: 6, placeholder: 'Progress 6' },
 ];
 
 export const RESULTS_TESTIMONIALS = [
   {
     id: 1,
-    quote: "I never thought I could feel this confident in my own skin. Tati changed my relationship with food and exercise.",
+    quote: "I never thought I could feel this confident in my own skin. Tati helped me rebuild my relationship with food and movement.",
     name: 'Michelle T.',
   },
   {
     id: 2,
-    quote: "After years of yo-yo dieting, I finally found something sustainable. Down 40 lbs and keeping it off!",
+    quote: "After years of yo-yo dieting, I finally found something sustainable. Down 40 lbs and maintaining.",
     name: 'Lauren S.',
   },
   {
     id: 3,
-    quote: "The mental shift was bigger than the physical one. I actually enjoy working out now.",
+    quote: "The mindset shift was bigger than the physical changes. I actually enjoy the process now.",
     name: 'Katie P.',
   },
 ];
@@ -177,7 +177,7 @@ export const RESULTS_CASE_STUDIES = [
     approach: [
       'Reintroduced structured training with progressive overload',
       'Adjusted nutrition for recreational vs. competitive activity',
-      'Focused on building sustainable habits vs. extreme protocols',
+      'Focused on sustainable habits vs. extreme protocols',
     ],
     outcome: 'Regained athletic build and rediscovered passion for fitness without the pressure.',
   },
@@ -194,8 +194,8 @@ export const RESULTS_CASE_STUDIES = [
 ];
 
 export const WORK_WITH_ME_HERO = {
-  headline: 'Your Journey Starts Here',
-  subheadline: 'Choose the coaching option that fits your lifestyle, goals, and budget. Every program is designed to meet you where you are.',
+  headline: 'Your Structure Starts Here',
+  subheadline: 'Choose the coaching format that fits your lifestyle, goals, and learning style.',
 };
 
 export const WORK_WITH_ME_PACKAGES = [
@@ -203,42 +203,42 @@ export const WORK_WITH_ME_PACKAGES = [
     id: 1,
     name: 'Signature 1:1 Coaching',
     price: 'Investment varies',
-    description: 'The ultimate personalized experience. Everything is tailored specifically to you—your body, your schedule, your preferences.',
+    description: 'The complete personalized experience. Everything is tailored specifically to you—your body, your schedule, your preferences.',
     features: [
-      'Fully customized nutrition plan',
-      'Personalized workout programming',
+      'Customized nutrition guidance',
+      'Personalized training programming',
       'Weekly video check-ins',
       'Unlimited messaging support',
       'Form check reviews',
-      'Bi-weekly plan adjustments',
+      'Bi-weekly adjustments',
     ],
     popular: true,
   },
   {
     id: 2,
     name: 'Group Coaching',
-    price: 'Affordable entry point',
-    description: 'Get expert guidance and community support at a fraction of the 1:1 price. Perfect for self-motivated individuals.',
+    price: 'Accessible entry point',
+    description: 'Expert guidance and community support. Ideal for self-motivated individuals who thrive with structure.',
     features: [
-      'Structured 8-12 week programs',
+      'Structured 8-12 week curriculum',
       'Private community access',
       'Weekly group calls',
-      'Recipe guides & meal templates',
+      'Recipe guides & templates',
       'Workout library access',
-      'Monthly challenges',
+      'Monthly focus challenges',
     ],
     popular: false,
   },
   {
     id: 3,
-    name: 'Self-Guided Programs',
+    name: 'Self-Guided Resources',
     price: 'One-time purchase',
-    description: 'Ready-to-follow programs for independent learners. All the knowledge, none of the ongoing commitment.',
+    description: 'Ready-to-follow programs for independent learners. All the methodology, at your own pace.',
     features: [
       'Comprehensive digital guides',
       'Video exercise library',
       'Meal plan templates',
-      'Progress tracking tools',
+      'Progress tracking sheets',
       'Lifetime access',
       'Email support',
     ],
@@ -250,64 +250,64 @@ export const WORK_WITH_ME_PROCESS = [
   {
     step: '01',
     title: 'Book a Call',
-    description: 'Schedule a free consultation to discuss your goals, challenges, and determine the best path forward.',
+    description: 'Schedule a consultation to discuss your goals, challenges, and determine the best path forward.',
   },
   {
     step: '02',
-    title: 'Get Your Plan',
-    description: 'Receive your personalized program based on our conversation and your specific needs.',
+    title: 'Receive Your Plan',
+    description: 'Get your personalized program based on our conversation and your specific needs.',
   },
   {
     step: '03',
-    title: 'Start Transforming',
-    description: 'Begin your journey with full support and guidance every step of the way.',
+    title: 'Begin the Work',
+    description: 'Start your structured journey with full support and guidance every step of the way.',
   },
   {
     step: '04',
-    title: 'Achieve & Maintain',
-    description: 'Reach your goals and learn to maintain your results for life.',
+    title: 'Build & Maintain',
+    description: 'Reach your goals and learn to sustain your results independently.',
   },
 ];
 
 export const RESOURCES_HERO = {
   headline: 'Resources & Guides',
-  subheadline: 'Explore my collection of programs, guides, and tools designed to support your fitness journey.',
+  subheadline: 'A collection of programs, templates, and tools designed to support your journey.',
 };
 
 export const RESOURCES_PRODUCTS = [
   {
     id: 1,
     title: 'Beginner\'s Guide to Macro Tracking',
-    description: 'Learn the fundamentals of tracking macros without the overwhelm. Perfect for nutrition newbies.',
+    description: 'Learn the fundamentals of tracking macros without the overwhelm. Perfect for getting started.',
     type: 'Digital Guide',
     link: 'https://r.newie.app/2qh9256f8dic',
   },
   {
     id: 2,
-    title: 'At-Home Workout Program',
-    description: 'No gym? No problem. A complete 8-week program using minimal equipment.',
-    type: 'Workout Program',
+    title: 'At-Home Training Program',
+    description: 'No gym required. A complete 8-week program using minimal equipment.',
+    type: 'Training Program',
     link: 'https://r.newie.app/2qh9256f8dic',
   },
   {
     id: 3,
     title: 'Meal Prep Mastery',
-    description: 'Save time and stay on track with my proven meal prep strategies and recipes.',
+    description: 'Save time and stay consistent with structured meal prep strategies and recipes.',
     type: 'Recipe Collection',
     link: 'https://r.newie.app/2qh9256f8dic',
   },
   {
     id: 4,
-    title: 'Mindset & Motivation Bundle',
-    description: 'Tools and techniques for building mental resilience and staying consistent.',
+    title: 'Mindset & Habits Bundle',
+    description: 'Tools and frameworks for building mental resilience and lasting consistency.',
     type: 'Digital Bundle',
     link: 'https://r.newie.app/2qh9256f8dic',
   },
 ];
 
 export const AFFILIATES_HERO = {
-  headline: 'Partner Brands & Codes',
-  subheadline: "Products I personally use and recommend. Use my codes for exclusive discounts.",
+  headline: 'Partner Brands',
+  subheadline: "Products I use and recommend. These codes support my work.",
 };
 
 export const AFFILIATES_LIST = [
@@ -323,7 +323,7 @@ export const AFFILIATES_LIST = [
     id: 2,
     brand: 'EHPlabs OxyShred',
     code: 'TATI',
-    description: 'My go-to pre-workout and thermogenic. Clean energy without the crash.',
+    description: 'My go-to pre-workout and energy supplement. Clean energy without the crash.',
     link: 'https://ehplabs.com.au/search?q=oxyshred+energy&options%5Bprefix%5D=last',
     discount: 'Exclusive savings',
   },
@@ -331,7 +331,7 @@ export const AFFILIATES_LIST = [
 
 export const DISCLAIMER_TEXT = {
   sitewide: 'Coaching services provided are for educational purposes only and do not constitute medical advice, diagnosis, or treatment. Always consult with a qualified healthcare provider before starting any fitness or nutrition program.',
-  results: 'Individual results may vary. Results shown are not guaranteed and depend on individual effort, consistency, and adherence to the program.',
+  results: 'Individual results may vary. Outcomes shown are not guaranteed and depend on individual effort, consistency, and adherence to the program.',
 };
 
 export const PRIVACY_POLICY = {

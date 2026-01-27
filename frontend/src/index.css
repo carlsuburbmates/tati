@@ -2,29 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Google Fonts Import */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Sora:wght@400;500;600;700&display=swap');
+/* Google Fonts Import - Toned Journal Studio */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap');
 
-/* TonedwithTati Design System - Dark Ink + Paper Cards */
+/* ========================================
+   TONED JOURNAL STUDIO - Design System
+   Paper-First Editorial Aesthetic
+   ======================================== */
+
 :root {
-  /* Backgrounds */
-  --bg-page: #0B0D12;
-  --bg-card: #F7F4EE;
-  --bg-subtle: #141823;
+  /* Backgrounds - Paper First */
+  --bg-page: #F7F2E8;
+  --bg-card: #FFFCF6;
+  --bg-ink-band: #0B0D12;
   
   /* Text Colors */
-  --text-primary: #F7F4EE;
-  --text-secondary: #C9CDD8;
   --text-ink: #0B0D12;
+  --text-muted: #3B3F4A;
+  
+  /* Border */
+  --border: #E6DCCB;
+  --border-strong: #D4C9B8;
   
   /* Brand Colors */
-  --brand-primary: #B7F24A;
-  --brand-hover: #a5d943;
-  --brand-warn: #FF5A4E;
-  
-  /* Borders */
-  --border-light: rgba(201,205,216,0.25);
-  --border-medium: rgba(201,205,216,0.4);
+  --brand-clay: #D96846;
+  --brand-clay-hover: #C45A3A;
+  --brand-pine: #123B2E;
+  --brand-pine-hover: #0D2A20;
+  --accent-violet: #5A4BFF;
   
   /* Spacing */
   --spacing-xs: 8px;
@@ -35,33 +40,31 @@
   --spacing-2xl: 64px;
   --spacing-3xl: 96px;
   
-  /* Border Radius */
+  /* Border Radius - Paper aesthetic */
+  --radius-card: 20px;
   --radius-sm: 8px;
-  --radius-md: 16px;
-  --radius-lg: 24px;
-  --radius-xl: 32px;
-  --radius-pill: 100px;
+  --radius-md: 12px;
   
-  /* Shadcn overrides */
-  --background: 220 20% 5%;
-  --foreground: 40 20% 95%;
-  --card: 40 20% 95%;
+  /* Shadcn overrides for light theme */
+  --background: 38 28% 94%;
+  --foreground: 220 20% 5%;
+  --card: 42 100% 99%;
   --card-foreground: 220 20% 5%;
-  --popover: 220 20% 5%;
-  --popover-foreground: 40 20% 95%;
-  --primary: 78 86% 62%;
-  --primary-foreground: 220 20% 5%;
-  --secondary: 220 20% 8%;
-  --secondary-foreground: 40 20% 95%;
-  --muted: 220 20% 8%;
-  --muted-foreground: 220 10% 75%;
-  --accent: 78 86% 62%;
-  --accent-foreground: 220 20% 5%;
-  --destructive: 5 90% 65%;
-  --destructive-foreground: 40 20% 95%;
-  --border: 220 10% 20%;
-  --input: 220 10% 20%;
-  --ring: 78 86% 62%;
+  --popover: 42 100% 99%;
+  --popover-foreground: 220 20% 5%;
+  --primary: 15 65% 56%;
+  --primary-foreground: 42 100% 99%;
+  --secondary: 160 55% 15%;
+  --secondary-foreground: 42 100% 99%;
+  --muted: 38 20% 88%;
+  --muted-foreground: 220 12% 26%;
+  --accent: 245 100% 65%;
+  --accent-foreground: 42 100% 99%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 42 100% 99%;
+  --border: 36 28% 85%;
+  --input: 36 28% 85%;
+  --ring: 15 65% 56%;
   --radius: 0.5rem;
 }
 
@@ -81,14 +84,17 @@ body {
   font-weight: 400;
   line-height: 1.6;
   background-color: var(--bg-page);
-  color: var(--text-primary);
+  color: var(--text-ink);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Typography Scale */
+/* ========================================
+   TYPOGRAPHY SYSTEM
+   ======================================== */
+
 .font-display {
-  font-family: 'Sora', 'General Sans', sans-serif;
+  font-family: 'Fraunces', Georgia, serif;
 }
 
 .font-body {
@@ -96,60 +102,60 @@ body {
 }
 
 .font-mono {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'IBM Plex Mono', monospace;
 }
 
-/* Display Headlines */
+/* Display Headlines - Fraunces */
 .display-xl {
-  font-family: 'Sora', sans-serif;
-  font-size: clamp(2.75rem, 7vw, 5rem);
-  font-weight: 700;
-  line-height: 1.05;
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 600;
+  line-height: 1.1;
   letter-spacing: -0.02em;
+  font-optical-sizing: auto;
 }
 
 .display-lg {
-  font-family: 'Sora', sans-serif;
-  font-size: clamp(2.25rem, 5vw, 3.5rem);
-  font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-}
-
-.display-md {
-  font-family: 'Sora', sans-serif;
-  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: clamp(2rem, 4.5vw, 3rem);
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 1.15;
   letter-spacing: -0.01em;
 }
 
-/* Headings */
+.display-md {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+/* Headings - Fraunces */
 .heading-1 {
-  font-family: 'Sora', sans-serif;
-  font-size: clamp(1.5rem, 3vw, 2rem);
-  font-weight: 600;
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: clamp(1.375rem, 2.5vw, 1.75rem);
+  font-weight: 500;
   line-height: 1.3;
 }
 
 .heading-2 {
-  font-family: 'Sora', sans-serif;
-  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: clamp(1.125rem, 2vw, 1.375rem);
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.heading-3 {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
   font-weight: 600;
   line-height: 1.4;
 }
 
-.heading-3 {
-  font-family: 'Sora', sans-serif;
-  font-size: clamp(1.125rem, 2vw, 1.25rem);
-  font-weight: 500;
-  line-height: 1.4;
-}
-
-/* Body Text */
+/* Body Text - Inter */
 .body-lg {
   font-family: 'Inter', sans-serif;
-  font-size: clamp(1.0625rem, 2vw, 1.1875rem);
+  font-size: clamp(1.0625rem, 1.8vw, 1.1875rem);
   font-weight: 400;
   line-height: 1.7;
 }
@@ -158,43 +164,31 @@ body {
   font-family: 'Inter', sans-serif;
   font-size: clamp(0.9375rem, 1.5vw, 1.0625rem);
   font-weight: 400;
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 .body-sm {
   font-family: 'Inter', sans-serif;
   font-size: clamp(0.8125rem, 1.25vw, 0.9375rem);
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
-/* Labels & Markers */
+/* Labels & Markers - IBM Plex Mono */
 .label-mono {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: clamp(0.6875rem, 1vw, 0.8125rem);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: clamp(0.6875rem, 0.9vw, 0.8125rem);
   font-weight: 500;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
-/* Macro Grid Background */
-.macro-grid {
-  background-image: 
-    linear-gradient(var(--border-light) 1px, transparent 1px),
-    linear-gradient(90deg, var(--border-light) 1px, transparent 1px);
-  background-size: 80px 80px;
-}
+/* ========================================
+   CONTAINER & LAYOUT
+   ======================================== */
 
-.macro-grid-subtle {
-  background-image: 
-    linear-gradient(rgba(201,205,216,0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(201,205,216,0.08) 1px, transparent 1px);
-  background-size: 60px 60px;
-}
-
-/* Container */
 .container-site {
-  max-width: 1280px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 var(--spacing-md);
 }
@@ -205,7 +199,6 @@ body {
   }
 }
 
-/* Section Spacing */
 .section-py {
   padding-top: var(--spacing-3xl);
   padding-bottom: var(--spacing-3xl);
@@ -218,11 +211,61 @@ body {
   }
 }
 
-/* Animations - CSS only, no AOS */
+/* ========================================
+   SIGNATURE MOTIFS
+   ======================================== */
+
+/* Notebook Margin Line - Left side */
+.notebook-margin {
+  position: relative;
+}
+
+.notebook-margin::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--brand-clay);
+  opacity: 0.2;
+}
+
+@media (min-width: 768px) {
+  .notebook-margin::before {
+    left: 40px;
+  }
+}
+
+/* Macro Grid Texture - Inside cards */
+.macro-grid-card {
+  background-image: 
+    linear-gradient(rgba(11,13,18,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11,13,18,0.03) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Paper Texture Overlay */
+.paper-texture {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.015;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+}
+
+/* ========================================
+   ANIMATIONS - CSS Only
+   ======================================== */
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(16px);
   }
   to {
     opacity: 1;
@@ -236,37 +279,49 @@ body {
 }
 
 .animate-fade-in-up {
-  animation: fadeInUp 0.6s ease-out forwards;
+  animation: fadeInUp 0.5s ease-out forwards;
 }
 
 .animate-fade-in {
-  animation: fadeIn 0.5s ease-out forwards;
+  animation: fadeIn 0.4s ease-out forwards;
 }
 
 .animate-delay-100 { animation-delay: 100ms; }
 .animate-delay-200 { animation-delay: 200ms; }
 .animate-delay-300 { animation-delay: 300ms; }
-.animate-delay-400 { animation-delay: 400ms; }
 
-/* Hover Transitions */
+/* Hover transitions */
 .hover-lift {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .hover-lift:hover {
-  transform: translateY(-4px);
+  transform: translateY(-3px);
 }
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
 
 /* Selection */
 ::selection {
-  background: var(--brand-primary);
-  color: var(--text-ink);
+  background: var(--brand-clay);
+  color: var(--bg-card);
 }
 
 /* Links */
 a {
   color: inherit;
   text-decoration: none;
+}
+
+.link-violet {
+  color: var(--accent-violet);
+  transition: opacity 0.2s ease;
+}
+
+.link-violet:hover {
+  opacity: 0.8;
 }
 
 /* Scrollbar */
@@ -279,12 +334,19 @@ a {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--border-light);
+  background: var(--border);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--text-secondary);
+  background: var(--border-strong);
+}
+
+/* Divider */
+.divider {
+  height: 1px;
+  background: var(--border);
+  width: 100%;
 }
 
 @layer base {
