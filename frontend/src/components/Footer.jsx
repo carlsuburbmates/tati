@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Instagram, ArrowUpRight } from 'lucide-react';
+import { Instagram, ArrowUpRight, Heart } from 'lucide-react';
 import { FOOTER_LINKS, SITE_CONFIG, DISCLAIMER_TEXT } from '../data/mock';
 
 const Footer = () => {
@@ -13,27 +13,27 @@ const Footer = () => {
   );
 
   return (
-    <footer className="ink-band">
-      <div className="container-site section-py">
+    <footer className="footer">
+      <div className="container section">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
           {/* Brand Column */}
-          <div className="lg:col-span-1">
+          <div className="col-span-2 md:col-span-1">
             <Link 
               to="/" 
-              className="font-display text-xl font-semibold text-[var(--bg-card)] inline-block mb-4"
+              className="font-display text-xl text-white inline-block mb-4"
             >
               TonedwithTati
             </Link>
-            <p className="body-sm text-[rgba(247,242,232,0.65)] mb-6 max-w-xs">
-              Evidence-based coaching. Sustainable methods. Real results.
+            <p className="text-sm text-white/60 mb-6 max-w-xs">
+              Evidence-based coaching for lasting results. Your goals, your timeline.
             </p>
             <div className="flex items-center gap-3">
               <a
                 href={SITE_CONFIG.socials.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-[rgba(247,242,232,0.1)] flex items-center justify-center text-[rgba(247,242,232,0.7)] hover:bg-[var(--brand-clay)] hover:text-[var(--bg-card)] transition-colors"
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white/70 hover:bg-[var(--brand-coral)] hover:text-white transition-all"
                 aria-label="Instagram"
               >
                 <Instagram size={18} />
@@ -42,7 +42,7 @@ const Footer = () => {
                 href={SITE_CONFIG.socials.tiktok}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-[rgba(247,242,232,0.1)] flex items-center justify-center text-[rgba(247,242,232,0.7)] hover:bg-[var(--brand-clay)] hover:text-[var(--bg-card)] transition-colors"
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white/70 hover:bg-[var(--brand-coral)] hover:text-white transition-all"
                 aria-label="TikTok"
               >
                 <TikTokIcon />
@@ -52,13 +52,13 @@ const Footer = () => {
 
           {/* Navigation Links */}
           <div>
-            <h4 className="label-mono text-[rgba(247,242,232,0.5)] mb-4">Navigate</h4>
+            <h4 className="text-label text-white/50 mb-4">Navigate</h4>
             <ul className="space-y-3">
               {FOOTER_LINKS.main.map((link) => (
                 <li key={link.path}>
-                  <Link to={link.path} className="footer-link flex items-center gap-1 group">
+                  <Link to={link.path} className="footer-link group inline-flex items-center gap-1">
                     {link.label}
-                    <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <ArrowUpRight size={12} className="opacity-0 group-hover:opacity-100 transition-opacity" />
                   </Link>
                 </li>
               ))}
@@ -67,7 +67,7 @@ const Footer = () => {
 
           {/* Legal Links */}
           <div>
-            <h4 className="label-mono text-[rgba(247,242,232,0.5)] mb-4">Legal</h4>
+            <h4 className="text-label text-white/50 mb-4">Legal</h4>
             <ul className="space-y-3">
               {FOOTER_LINKS.legal.map((link) => (
                 <li key={link.path}>
@@ -81,15 +81,15 @@ const Footer = () => {
 
           {/* CTA Column */}
           <div>
-            <h4 className="label-mono text-[rgba(247,242,232,0.5)] mb-4">Get Started</h4>
-            <p className="body-sm text-[rgba(247,242,232,0.65)] mb-5">
-              Ready to begin? Book a consultation.
+            <h4 className="text-label text-white/50 mb-4">Ready?</h4>
+            <p className="text-sm text-white/60 mb-5">
+              Start your transformation today.
             </p>
             <a
               href={SITE_CONFIG.bookingUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary inline-flex"
+              className="btn-primary text-sm py-3 px-5"
             >
               Book Now
             </a>
@@ -97,22 +97,25 @@ const Footer = () => {
         </div>
 
         {/* Disclaimer */}
-        <div className="mt-16 pt-8 border-t border-[rgba(247,242,232,0.15)]">
-          <p className="body-sm text-[rgba(247,242,232,0.5)] max-w-4xl">
+        <div className="mt-12 md:mt-16 pt-8 border-t border-white/10">
+          <p className="text-sm text-white/40 max-w-3xl">
             {DISCLAIMER_TEXT.sitewide}
           </p>
         </div>
 
         {/* Copyright */}
-        <div className="mt-8 pt-8 border-t border-[rgba(247,242,232,0.1)] flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="label-mono text-[rgba(247,242,232,0.4)]">
-            © {currentYear} TonedwithTati. All rights reserved.
+        <div className="mt-8 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p className="text-label text-white/40">
+            © {currentYear} TonedwithTati
           </p>
-          <p className="label-mono text-[rgba(247,242,232,0.4)]">
-            Coaching is not medical care
+          <p className="text-label text-white/40 flex items-center gap-1">
+            Made with <Heart size={12} className="text-[var(--brand-coral)]" /> for results
           </p>
         </div>
       </div>
+
+      {/* Extra padding for mobile sticky CTA */}
+      <div className="h-20 md:hidden" />
     </footer>
   );
 };

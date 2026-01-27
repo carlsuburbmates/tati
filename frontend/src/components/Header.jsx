@@ -1,11 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Instagram } from 'lucide-react';
+import { Menu, X, Instagram, ArrowRight } from 'lucide-react';
 import { NAV_LINKS, SITE_CONFIG } from '../data/mock';
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const TikTokIcon = () => (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -14,124 +21,150 @@ const Header = () => {
   );
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[var(--bg-page)]/98 backdrop-blur-sm border-b border-[var(--border)]">
-      <div className="container-site">
-        <nav className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
-          <Link 
-            to="/" 
-            className="font-display text-lg md:text-xl font-semibold text-[var(--text-ink)] hover:text-[var(--brand-clay)] transition-colors"
-          >
-            TonedwithTati
-          </Link>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-1">
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`nav-link ${
-                  location.pathname === link.path ? 'nav-link-active' : ''
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
-
-          {/* Desktop CTA + Socials */}
-          <div className="hidden md:flex items-center gap-5">
-            <div className="flex items-center gap-1">
-              <a
-                href={SITE_CONFIG.socials.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 text-[var(--text-muted)] hover:text-[var(--accent-violet)] transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram size={18} />
-              </a>
-              <a
-                href={SITE_CONFIG.socials.tiktok}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 text-[var(--text-muted)] hover:text-[var(--accent-violet)] transition-colors"
-                aria-label="TikTok"
-              >
-                <TikTokIcon />
-              </a>
-            </div>
-            <a 
-              href={SITE_CONFIG.bookingUrl} 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="btn-primary py-2.5 px-5 text-sm min-h-0"
+    <>
+      <header 
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          scrolled 
+            ? 'bg-[var(--bg-base)]/95 backdrop-blur-md shadow-sm' 
+            : 'bg-transparent'
+        }`}
+      >
+        <div className="container">
+          <nav className="flex items-center justify-between h-16 md:h-20">
+            {/* Logo */}
+            <Link 
+              to="/" 
+              className="font-display text-lg md:text-xl text-[var(--text-primary)] hover:text-[var(--brand-coral)] transition-colors"
             >
-              Book Now
-            </a>
-          </div>
+              TonedwithTati
+            </Link>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2 text-[var(--text-ink)]"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
-          </button>
-        </nav>
-
-        {/* Mobile Menu */}
-        {mobileMenuOpen && (
-          <div className="md:hidden absolute top-16 left-0 right-0 bg-[var(--bg-card)] border-b border-[var(--border)] shadow-lg animate-fade-in">
-            <div className="container-site py-4 flex flex-col gap-1">
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center gap-1">
               {NAV_LINKS.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`py-3 px-4 rounded-lg font-medium transition-colors ${
-                    location.pathname === link.path
-                      ? 'bg-[var(--bg-page)] text-[var(--text-ink)]'
-                      : 'text-[var(--text-muted)] hover:bg-[var(--bg-page)]'
+                  className={`nav-link ${
+                    location.pathname === link.path ? 'nav-link-active' : ''
                   }`}
-                  onClick={() => setMobileMenuOpen(false)}
                 >
                   {link.label}
                 </Link>
               ))}
-              <div className="flex items-center gap-4 px-4 pt-4 mt-2 border-t border-[var(--border)]">
+            </div>
+
+            {/* Desktop CTA */}
+            <div className="hidden md:flex items-center gap-4">
+              <div className="flex items-center gap-1">
                 <a
                   href={SITE_CONFIG.socials.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 text-[var(--text-muted)] hover:text-[var(--accent-violet)]"
+                  className="p-2 text-[var(--text-muted)] hover:text-[var(--brand-coral)] transition-colors"
+                  aria-label="Instagram"
                 >
-                  <Instagram size={20} />
+                  <Instagram size={18} />
                 </a>
                 <a
                   href={SITE_CONFIG.socials.tiktok}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 text-[var(--text-muted)] hover:text-[var(--accent-violet)]"
+                  className="p-2 text-[var(--text-muted)] hover:text-[var(--brand-coral)] transition-colors"
+                  aria-label="TikTok"
                 >
                   <TikTokIcon />
                 </a>
               </div>
-              <a
-                href={SITE_CONFIG.bookingUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary mt-4 mx-4"
-                onClick={() => setMobileMenuOpen(false)}
+              <a 
+                href={SITE_CONFIG.bookingUrl} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="btn-primary py-3 px-6 text-sm"
               >
                 Book Now
               </a>
             </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              className="md:hidden p-2 text-[var(--text-primary)]"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </nav>
+        </div>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden fixed inset-0 top-16 bg-[var(--bg-base)] z-40 animate-fade-up">
+            <div className="container py-6 flex flex-col gap-2 h-full">
+              {NAV_LINKS.map((link, index) => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={`py-4 px-4 rounded-xl text-lg font-medium transition-all animate-fade-up ${
+                    location.pathname === link.path
+                      ? 'bg-[var(--bg-card)] text-[var(--text-primary)]'
+                      : 'text-[var(--text-body)] hover:bg-[var(--bg-card)]'
+                  }`}
+                  style={{ animationDelay: `${index * 50}ms` }}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              ))}
+              
+              <div className="mt-auto pt-6 border-t border-[var(--border)]">
+                <div className="flex items-center gap-4 mb-4">
+                  <a
+                    href={SITE_CONFIG.socials.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-12 h-12 rounded-full bg-[var(--bg-card)] flex items-center justify-center text-[var(--text-muted)] hover:text-[var(--brand-coral)] transition-colors"
+                  >
+                    <Instagram size={20} />
+                  </a>
+                  <a
+                    href={SITE_CONFIG.socials.tiktok}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-12 h-12 rounded-full bg-[var(--bg-card)] flex items-center justify-center text-[var(--text-muted)] hover:text-[var(--brand-coral)] transition-colors"
+                  >
+                    <TikTokIcon />
+                  </a>
+                </div>
+                <a
+                  href={SITE_CONFIG.bookingUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary w-full"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Book Your Call
+                  <ArrowRight size={18} />
+                </a>
+              </div>
+            </div>
           </div>
         )}
+      </header>
+
+      {/* Mobile Sticky CTA */}
+      <div className="sticky-cta">
+        <a
+          href={SITE_CONFIG.bookingUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-primary w-full max-w-sm"
+        >
+          Book Your Call
+          <ArrowRight size={18} />
+        </a>
       </div>
-    </header>
+    </>
   );
 };
 
