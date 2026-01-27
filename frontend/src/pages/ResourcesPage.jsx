@@ -1,5 +1,5 @@
 import React from 'react';
-import { ExternalLink, BookOpen, Dumbbell, ChefHat, Brain } from 'lucide-react';
+import { ExternalLink, BookOpen, Dumbbell, ChefHat, Lightbulb } from 'lucide-react';
 import SectionMarker from '../components/SectionMarker';
 import CTAButton from '../components/CTAButton';
 import PageLayout from '../components/PageLayout';
@@ -7,23 +7,23 @@ import { RESOURCES_HERO, RESOURCES_PRODUCTS, SITE_CONFIG } from '../data/mock';
 
 const iconMap = {
   'Digital Guide': BookOpen,
-  'Workout Program': Dumbbell,
+  'Training Program': Dumbbell,
   'Recipe Collection': ChefHat,
-  'Digital Bundle': Brain,
+  'Digital Bundle': Lightbulb,
 };
 
 const ResourcesPage = () => {
   return (
     <PageLayout>
       {/* Hero Section */}
-      <section className="section-py macro-grid-subtle">
+      <section className="py-16 md:py-24 notebook-margin">
         <div className="container-site">
           <div className="max-w-3xl">
-            <SectionMarker number="01/02" />
-            <h1 className="display-lg text-[var(--text-primary)] mb-6">
+            <SectionMarker number="01" />
+            <h1 className="display-lg text-[var(--text-ink)] mb-6">
               {RESOURCES_HERO.headline}
             </h1>
-            <p className="body-lg text-[var(--text-secondary)] max-w-2xl">
+            <p className="body-lg text-[var(--text-muted)] max-w-2xl">
               {RESOURCES_HERO.subheadline}
             </p>
           </div>
@@ -31,7 +31,7 @@ const ResourcesPage = () => {
       </section>
 
       {/* Products Grid */}
-      <section className="section-py bg-[var(--bg-subtle)]">
+      <section className="section-py bg-[var(--bg-card)] border-y border-[var(--border)]">
         <div className="container-site">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {RESOURCES_PRODUCTS.map((product) => {
@@ -42,25 +42,25 @@ const ResourcesPage = () => {
                   href={product.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="paper-card group flex flex-col"
+                  className="paper-card group"
                 >
                   <div className="flex items-start justify-between mb-4">
-                    <div className="w-12 h-12 rounded-xl bg-[var(--bg-subtle)] flex items-center justify-center">
-                      <IconComponent size={24} className="text-[var(--text-ink)]" />
+                    <div className="w-11 h-11 rounded-lg bg-[var(--bg-page)] border border-[var(--border)] flex items-center justify-center">
+                      <IconComponent size={20} className="text-[var(--brand-pine)]" />
                     </div>
-                    <span className="badge-ink">{product.type}</span>
+                    <span className="badge-pine">{product.type}</span>
                   </div>
                   
-                  <h3 className="heading-2 text-[var(--text-ink)] mb-3 group-hover:text-[var(--brand-primary)] transition-colors">
+                  <h3 className="heading-1 text-[var(--text-ink)] mb-3 group-hover:text-[var(--accent-violet)] transition-colors">
                     {product.title}
                   </h3>
-                  <p className="body-sm text-[var(--text-ink)] opacity-70 mb-6 flex-grow">
+                  <p className="body-sm text-[var(--text-muted)] mb-6">
                     {product.description}
                   </p>
                   
-                  <div className="flex items-center gap-2 text-[var(--text-ink)] group-hover:text-[var(--brand-primary)] transition-colors">
+                  <div className="flex items-center gap-2 text-[var(--text-muted)] group-hover:text-[var(--accent-violet)] transition-colors">
                     <span className="body-sm font-medium">View on Newie</span>
-                    <ExternalLink size={16} />
+                    <ExternalLink size={14} />
                   </div>
                 </a>
               );
@@ -68,8 +68,8 @@ const ResourcesPage = () => {
           </div>
 
           <div className="mt-12 text-center">
-            <p className="body-md text-[var(--text-secondary)] mb-6">
-              Browse my complete collection of programs and guides
+            <p className="body-md text-[var(--text-muted)] mb-6">
+              Browse the complete collection
             </p>
             <a
               href={SITE_CONFIG.newie.hub}
@@ -77,8 +77,8 @@ const ResourcesPage = () => {
               rel="noopener noreferrer"
               className="btn-secondary inline-flex"
             >
-              Visit My Newie Store
-              <ExternalLink size={18} />
+              Visit Newie Store
+              <ExternalLink size={16} />
             </a>
           </div>
         </div>
@@ -87,13 +87,13 @@ const ResourcesPage = () => {
       {/* CTA Section */}
       <section className="section-py">
         <div className="container-site">
-          <div className="max-w-3xl mx-auto text-center">
-            <SectionMarker number="02/02" />
-            <h2 className="display-md text-[var(--text-primary)] mb-6">
+          <div className="max-w-2xl mx-auto text-center">
+            <SectionMarker number="02" />
+            <h2 className="display-md text-[var(--text-ink)] mb-6">
               Want Personalized Guidance?
             </h2>
-            <p className="body-lg text-[var(--text-secondary)] mb-10">
-              Self-guided programs are great, but nothing beats having a coach in your corner. Explore my 1:1 coaching options for fully customized support.
+            <p className="body-lg text-[var(--text-muted)] mb-10">
+              Self-guided programs work well, but nothing beats personalized coaching. Explore 1:1 options for fully customized support.
             </p>
             <CTAButton>Book a Consultation</CTAButton>
           </div>

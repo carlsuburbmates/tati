@@ -8,21 +8,21 @@ const PolicyLayout = ({ title, lastUpdated, content }) => {
         <div className="container-site">
           <div className="max-w-3xl mx-auto">
             <div className="mb-12">
-              <p className="label-mono text-[var(--text-secondary)] mb-4">
+              <p className="label-mono text-[var(--text-muted)] mb-4">
                 Last updated: {lastUpdated}
               </p>
-              <h1 className="display-md text-[var(--text-primary)]">
+              <h1 className="display-md text-[var(--text-ink)]">
                 {title}
               </h1>
             </div>
 
             <div className="space-y-10">
               {content.map((section, index) => (
-                <div key={index}>
-                  <h2 className="heading-2 text-[var(--text-primary)] mb-4">
+                <div key={index} className="paper-card">
+                  <h2 className="heading-2 text-[var(--text-ink)] mb-4">
                     {section.heading}
                   </h2>
-                  <p className="body-md text-[var(--text-secondary)] leading-relaxed">
+                  <p className="body-md text-[var(--text-muted)] leading-relaxed">
                     {section.text}
                   </p>
                 </div>
