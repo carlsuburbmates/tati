@@ -23,7 +23,7 @@ const CTAButton = ({
         {...props}
       >
         {children}
-        {showArrow && <ArrowRight size={18} />}
+        {showArrow && <ArrowRight size={16} />}
       </a>
     );
   }
@@ -31,7 +31,7 @@ const CTAButton = ({
   return (
     <button className={`${baseClass} ${className}`} {...props}>
       {children}
-      {showArrow && <ArrowRight size={18} />}
+      {showArrow && <ArrowRight size={16} />}
     </button>
   );
 };

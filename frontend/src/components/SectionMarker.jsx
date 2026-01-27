@@ -1,8 +1,8 @@
 import React from 'react';
 
-const SectionMarker = ({ number, dark = false }) => {
+const SectionMarker = ({ number, light = false }) => {
   return (
-    <div className={`section-marker ${dark ? 'section-marker-dark' : ''}`}>
+    <div className={`section-marker ${light ? 'section-marker-light' : ''}`}>
       <span>{number}</span>
     </div>
   );
