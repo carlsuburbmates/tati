@@ -1,6 +1,6 @@
 import React from 'react';
-import { Quote, CheckCircle, AlertCircle } from 'lucide-react';
-import SectionMarker from '../components/SectionMarker';
+import { Quote, CheckCircle, AlertCircle, ArrowRight, Sparkles } from 'lucide-react';
+import SectionLabel from '../components/SectionLabel';
 import CTAButton from '../components/CTAButton';
 import PageLayout from '../components/PageLayout';
 import {
@@ -14,15 +14,24 @@ import {
 const ResultsPage = () => {
   return (
     <PageLayout>
+      {/* Floating Blobs */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div className="blob blob-sage w-[350px] h-[350px] top-20 -right-20 opacity-25" />
+        <div className="blob blob-rose w-[250px] h-[250px] bottom-1/3 -left-10 opacity-20" style={{ animationDelay: '-4s' }} />
+      </div>
+
       {/* Hero Section */}
-      <section className="py-16 md:py-24 notebook-margin">
-        <div className="container-site">
+      <section className="relative section pt-12 md:pt-20">
+        <div className="container relative z-10">
           <div className="max-w-3xl">
-            <SectionMarker number="01" />
-            <h1 className="display-lg text-[var(--text-ink)] mb-6">
+            <div className="badge badge-sage mb-6 animate-fade-up">
+              <Sparkles size={12} />
+              {RESULTS_HERO.label}
+            </div>
+            <h1 className="text-display mb-6 animate-fade-up animate-delay-1">
               {RESULTS_HERO.headline}
             </h1>
-            <p className="body-lg text-[var(--text-muted)] max-w-2xl">
+            <p className="text-body-lg text-[var(--text-body)] max-w-2xl animate-fade-up animate-delay-2">
               {RESULTS_HERO.subheadline}
             </p>
           </div>
@@ -30,47 +39,49 @@ const ResultsPage = () => {
       </section>
 
       {/* Proof Grid Section */}
-      <section className="section-py bg-[var(--bg-card)] border-y border-[var(--border)]">
-        <div className="container-site">
-          <div className="text-center mb-12">
-            <h2 className="heading-1 text-[var(--text-ink)] mb-3">Progress Gallery</h2>
-            <p className="body-md text-[var(--text-muted)]">
-              Real progress from real clients. Every journey is unique.
+      <section className="section bg-[var(--bg-elevated)]">
+        <div className="container">
+          <div className="text-center mb-10">
+            <h2 className="text-h2 mb-2">Progress Gallery</h2>
+            <p className="text-sm text-[var(--text-muted)]">
+              Real transformations from real women.
             </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-5">
+          
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
             {RESULTS_PROOF_GRID.map((item) => (
               <div
                 key={item.id}
-                className="img-placeholder aspect-[3/4] hover-lift"
+                className="img-placeholder aspect-[3/4] hover:scale-[1.02] transition-transform cursor-pointer"
               >
-                <span className="opacity-50">{item.placeholder}</span>
+                <span className="opacity-40 text-xs">{item.placeholder}</span>
               </div>
             ))}
           </div>
-          <p className="text-center label-mono text-[var(--text-muted)] mt-8 opacity-70">
+          
+          <p className="text-center text-label text-[var(--text-muted)] mt-6">
             Images shown with client permission
           </p>
         </div>
       </section>
 
       {/* Testimonial Strip */}
-      <section className="py-14 md:py-20 border-b border-[var(--border)]">
-        <div className="container-site">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
+      <section className="section py-12 md:py-16">
+        <div className="container">
+          <div className="scroll-x md:grid-cols-3 md:gap-8">
             {RESULTS_TESTIMONIALS.map((testimonial) => (
               <div
                 key={testimonial.id}
-                className="relative pl-6 border-l-2 border-[var(--border)]"
+                className="relative pl-6 border-l-2 border-[var(--accent-rose)] w-[280px] md:w-auto flex-shrink-0"
               >
                 <Quote
-                  size={20}
-                  className="absolute -left-[11px] top-0 bg-[var(--bg-page)] text-[var(--brand-clay)]"
+                  size={18}
+                  className="absolute -left-[11px] top-0 bg-[var(--bg-base)] text-[var(--brand-coral)]"
                 />
-                <p className="body-md text-[var(--text-ink)] italic mb-4 leading-relaxed">
+                <p className="text-body text-[var(--text-primary)] italic mb-4 leading-relaxed">
                   "{testimonial.quote}"
                 </p>
-                <p className="heading-3 text-[var(--text-muted)]">
+                <p className="text-h3 text-[var(--text-muted)]">
                   — {testimonial.name}
                 </p>
               </div>
@@ -80,42 +91,35 @@ const ResultsPage = () => {
       </section>
 
       {/* Case Studies Section */}
-      <section className="section-py">
-        <div className="container-site">
-          <div className="text-center max-w-2xl mx-auto mb-14">
-            <SectionMarker number="02" />
-            <h2 className="display-md text-[var(--text-ink)] mb-4">
-              Client Stories
-            </h2>
-            <p className="body-md text-[var(--text-muted)]">
-              Behind every result is a unique story. Here's how we approach different challenges.
+      <section className="section bg-[var(--bg-elevated)]">
+        <div className="container">
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <SectionLabel>Case Studies</SectionLabel>
+            <h2 className="text-h1 mb-3">Client Journeys</h2>
+            <p className="text-body text-[var(--text-muted)]">
+              Every transformation has a story. Here's how we approached different challenges.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {RESULTS_CASE_STUDIES.map((study, index) => (
-              <div
-                key={study.id}
-                className="paper-card paper-card-grid"
-              >
-                <div className="label-mono text-[var(--text-muted)] mb-5">
-                  Case Study 0{index + 1}
-                </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+            {RESULTS_CASE_STUDIES.map((study) => (
+              <div key={study.id} className="card">
+                <div className="badge badge-gold mb-4">{study.title}</div>
 
                 {/* Starting Point */}
-                <div className="mb-6">
-                  <p className="label-mono text-[var(--brand-clay)] mb-2">Starting Point</p>
-                  <p className="body-md text-[var(--text-ink)]">{study.startingPoint}</p>
+                <div className="mb-5">
+                  <p className="text-label text-[var(--brand-coral)] mb-2">Starting Point</p>
+                  <p className="text-body text-[var(--text-primary)]">{study.startingPoint}</p>
                 </div>
 
                 {/* Approach */}
-                <div className="mb-6">
-                  <p className="label-mono text-[var(--text-muted)] mb-3">Approach</p>
+                <div className="mb-5">
+                  <p className="text-label text-[var(--text-muted)] mb-3">The Approach</p>
                   <ul className="space-y-2">
                     {study.approach.map((item, i) => (
                       <li key={i} className="flex items-start gap-3">
-                        <CheckCircle size={16} className="flex-shrink-0 text-[var(--brand-pine)] mt-0.5" />
-                        <span className="body-sm text-[var(--text-muted)]">{item}</span>
+                        <CheckCircle size={16} className="flex-shrink-0 text-[var(--accent-sage)] mt-0.5" />
+                        <span className="text-sm text-[var(--text-body)]">{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -123,8 +127,8 @@ const ResultsPage = () => {
 
                 {/* Outcome */}
                 <div className="pt-5 border-t border-[var(--border)]">
-                  <p className="label-mono text-[var(--brand-pine)] mb-2">Outcome</p>
-                  <p className="heading-2 text-[var(--text-ink)]">{study.outcome}</p>
+                  <p className="text-label text-[var(--accent-sage)] mb-2">The Outcome</p>
+                  <p className="text-h3 text-[var(--text-primary)]">{study.outcome}</p>
                 </div>
               </div>
             ))}
@@ -133,15 +137,12 @@ const ResultsPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="section-py bg-[var(--bg-card)] border-t border-[var(--border)]">
-        <div className="container-site">
-          <div className="max-w-2xl mx-auto text-center">
-            <SectionMarker number="03" light />
-            <h2 className="display-md text-[var(--text-ink)] mb-6">
-              Your Story Starts Here
-            </h2>
-            <p className="body-lg text-[var(--text-muted)] mb-10">
-              Ready to create your own results? Book a consultation to discuss your goals and build a plan together.
+      <section className="section">
+        <div className="container">
+          <div className="card glass-border text-center max-w-2xl mx-auto py-12">
+            <h2 className="text-h1 mb-4">Write Your Own Story</h2>
+            <p className="text-body-lg text-[var(--text-body)] mb-8 max-w-lg mx-auto">
+              Ready to start your transformation? Book a free call to discuss your goals.
             </p>
             <CTAButton>Start Your Journey</CTAButton>
           </div>
@@ -149,12 +150,12 @@ const ResultsPage = () => {
       </section>
 
       {/* Results Disclaimer */}
-      <section className="py-6 md:py-8 border-t border-[var(--border)] bg-[var(--bg-page)]">
-        <div className="container-site">
+      <section className="py-6 border-t border-[var(--border)]">
+        <div className="container">
           <div className="flex items-start gap-3 max-w-3xl mx-auto">
-            <AlertCircle size={18} className="flex-shrink-0 text-[var(--brand-clay)] mt-0.5" />
-            <p className="body-sm text-[var(--text-muted)]">
-              <strong className="text-[var(--text-ink)]">Disclaimer:</strong> {DISCLAIMER_TEXT.results}
+            <AlertCircle size={18} className="flex-shrink-0 text-[var(--accent-gold)] mt-0.5" />
+            <p className="text-sm text-[var(--text-muted)]">
+              <strong className="text-[var(--text-primary)]">Disclaimer:</strong> {DISCLAIMER_TEXT.results}
             </p>
           </div>
         </div>
