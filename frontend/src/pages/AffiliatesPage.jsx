@@ -1,21 +1,30 @@
 import React from 'react';
-import { ExternalLink, Tag, Info } from 'lucide-react';
-import SectionMarker from '../components/SectionMarker';
+import { ExternalLink, Tag, Info, Sparkles } from 'lucide-react';
+import SectionLabel from '../components/SectionLabel';
 import PageLayout from '../components/PageLayout';
 import { AFFILIATES_HERO, AFFILIATES_LIST } from '../data/mock';
 
 const AffiliatesPage = () => {
   return (
     <PageLayout>
+      {/* Floating Blobs */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div className="blob blob-rose w-[280px] h-[280px] top-24 -right-10 opacity-25" />
+        <div className="blob blob-gold w-[200px] h-[200px] bottom-1/3 -left-10 opacity-20" style={{ animationDelay: '-3s' }} />
+      </div>
+
       {/* Hero Section */}
-      <section className="py-16 md:py-24 notebook-margin">
-        <div className="container-site">
+      <section className="relative section pt-12 md:pt-20">
+        <div className="container relative z-10">
           <div className="max-w-3xl">
-            <SectionMarker number="01" />
-            <h1 className="display-lg text-[var(--text-ink)] mb-6">
+            <div className="badge badge-gold mb-6 animate-fade-up">
+              <Sparkles size={12} />
+              {AFFILIATES_HERO.label}
+            </div>
+            <h1 className="text-display mb-6 animate-fade-up animate-delay-1">
               {AFFILIATES_HERO.headline}
             </h1>
-            <p className="body-lg text-[var(--text-muted)] max-w-2xl">
+            <p className="text-body-lg text-[var(--text-body)] max-w-2xl animate-fade-up animate-delay-2">
               {AFFILIATES_HERO.subheadline}
             </p>
           </div>
@@ -23,24 +32,24 @@ const AffiliatesPage = () => {
       </section>
 
       {/* Affiliates List */}
-      <section className="section-py bg-[var(--bg-card)] border-y border-[var(--border)]">
-        <div className="container-site">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      <section className="section bg-[var(--bg-elevated)]">
+        <div className="container">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-3xl mx-auto">
             {AFFILIATES_LIST.map((affiliate) => (
-              <div key={affiliate.id} className="paper-card">
+              <div key={affiliate.id} className="card">
                 <div className="flex items-start justify-between mb-4">
-                  <h3 className="heading-1 text-[var(--text-ink)]">{affiliate.brand}</h3>
+                  <h3 className="text-h2">{affiliate.brand}</h3>
                   <span className="badge">{affiliate.discount}</span>
                 </div>
                 
-                <p className="body-sm text-[var(--text-muted)] mb-6">
+                <p className="text-sm text-[var(--text-muted)] mb-6">
                   {affiliate.description}
                 </p>
                 
                 <div className="flex items-center justify-between pt-5 border-t border-[var(--border)]">
                   <div className="flex items-center gap-2">
-                    <Tag size={14} className="text-[var(--brand-clay)]" />
-                    <span className="font-mono text-base font-medium text-[var(--text-ink)]">
+                    <Tag size={14} className="text-[var(--brand-coral)]" />
+                    <span className="font-mono text-base font-medium text-[var(--text-primary)]">
                       {affiliate.code}
                     </span>
                   </div>
@@ -48,7 +57,7 @@ const AffiliatesPage = () => {
                     href={affiliate.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-ghost hover:text-[var(--accent-violet)]"
+                    className="btn-ghost"
                   >
                     Shop Now
                     <ExternalLink size={14} />
@@ -61,27 +70,26 @@ const AffiliatesPage = () => {
       </section>
 
       {/* Disclosure Section */}
-      <section className="section-py">
-        <div className="container-site">
-          <div className="max-w-3xl mx-auto">
-            <SectionMarker number="02" />
-            <h2 className="heading-1 text-[var(--text-ink)] mb-6">
-              Affiliate Disclosure
-            </h2>
-            <div className="paper-card">
+      <section className="section">
+        <div className="container">
+          <div className="max-w-2xl mx-auto">
+            <SectionLabel>Disclosure</SectionLabel>
+            <h2 className="text-h1 mb-6">Affiliate Transparency</h2>
+            
+            <div className="card">
               <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[var(--bg-page)] border border-[var(--border)] flex items-center justify-center">
-                  <Info size={18} className="text-[var(--brand-pine)]" />
+                <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-[var(--accent-sage)] to-[var(--accent-sage)]/70 flex items-center justify-center">
+                  <Info size={18} className="text-white" />
                 </div>
                 <div className="space-y-4">
-                  <p className="body-md text-[var(--text-muted)]">
-                    This page contains affiliate links. As an affiliate, I earn a small commission from qualifying purchases at no additional cost to you.
+                  <p className="text-body text-[var(--text-body)]">
+                    This page contains affiliate links. I earn a small commission from qualifying purchases at no extra cost to you.
                   </p>
-                  <p className="body-md text-[var(--text-muted)]">
-                    I only recommend products I personally use and believe in. My recommendations are based on my own experience and are not influenced by commission rates.
+                  <p className="text-body text-[var(--text-body)]">
+                    I only recommend products I personally use and believe in. My recommendations are based on my experience—not commission rates.
                   </p>
-                  <p className="body-md text-[var(--text-muted)]">
-                    Your support through these links helps me continue creating free content and resources. Thank you!
+                  <p className="text-body text-[var(--text-body)]">
+                    Your support through these links helps me create free content. Thank you!
                   </p>
                 </div>
               </div>
