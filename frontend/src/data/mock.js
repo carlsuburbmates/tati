@@ -19,6 +19,7 @@ export const NAV_LINKS = [
   { label: 'Home', path: '/' },
   { label: 'Work With Me', path: '/work-with-me' },
   { label: 'Results', path: '/results' },
+  { label: 'Client Toolkit', path: '/toolkit' },
   { label: 'Resources', path: '/resources' },
   { label: 'Affiliates', path: '/affiliates' },
 ];
